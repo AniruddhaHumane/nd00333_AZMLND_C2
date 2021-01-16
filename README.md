@@ -51,37 +51,37 @@ The Architectural diagram is as follows. This covers the most crucial steps we d
 
 ## Key Steps
 1. We have the dataset on which we will be training the ML model which is the bankmarketing dataset.
-![Dataset](1 dataset.png)
+![Dataset](1%20dataset.png)
 2. We then created an AutoML experiment and used our bankmarketing dataset to identify the best model.
-![AutoML Experiment](2 automl finished.png)
+![AutoML Experiment](2%20automl%20finished.png)
 3. We identified that the best model was a VotingEnsemble which had the accuracy of 92%.
-![Best Model](3 best model.png)
+![Best Model](3%20best%20model.png)
 4. We then deployed our best model and created an endpoint
-![Endpoint](4 endpoint deployed.png)
+![Endpoint](4%20endpoint%20deployed.png)
 5. To enable the application insight we executed the logs.py
-![Logs](5 logs.py.png)
+![Logs](5%20logs.py.png)
 6. We can see that the application insights are enabled
-![App Insights](6 app insight enabled.png)
+![App Insights](6%20app%20insight%20enabled.png)
 7. We then downloaded the latest docker image using swagger.sh
-![swagger sh](swagger sh.png)
+![swagger sh](swagger%20sh.png)
 9. And provided the swagger URI throgh serve.py to get the model documentation. These are the HTTP APIs that are available.
-![http api score](7 http api score.png)
+![http api score](7%20http%20api%20score.png)
 10. And this is the response that our model provides. On successful execution it returns the score otherwise it returns an error code with description.
-![http api response](8 http api response.png)
+![http api response](8%20http%20api%20response.png)
 11. We then copied the rest URI and primary key, updated it in the endpoint.py and executed it to get the output from the model.
-![endpoint response](9 endpoint response.png)
+![endpoint response](9%20endpoint%20response.png)
 12. Then we created the bankmarketing dataset through the notebook
-![bankmarketing datased from notebook](12 bankmarketing datased from notebook.png)
+![bankmarketing datased from notebook](12%20bankmarketing%20datased%20from%20notebook.png)
 13. Then we created the pipeline
-![pipeline created](10 pipeline created.png)
+![pipeline created](10%20pipeline%20created.png)
 14. Through pipeline we created an autoML experiment and ran it to identify the best model. This is the output of runwidget
-![pipeline runwidget](14 pipeline runwidget.png)
+![pipeline runwidget](14%20pipeline%20runwidget.png)
 15. These are the steps our model performed
-![best model steps](best model steps.png)
+![best model steps](best%20model%20steps.png)
 16. We then deployed and created an endpoint to schedule the run through pipeline
-![pipeline endpoints](11 pipeline endpoints.png)
+![pipeline endpoints](11%20pipeline%20endpoints.png)
 17. and then scheduled a new AutoML run
-![scheduled run completed](16 scheduled run completed.png)
+![scheduled run completed](16%20scheduled%20run%20completed.png)
 
 
 ## Screen Recording
