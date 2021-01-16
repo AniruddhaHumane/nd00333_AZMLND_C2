@@ -47,7 +47,7 @@ Note: The above information about the features is taken from [UCI Machine Learni
 
 ## Architectural Diagram
 The Architectural diagram is as follows. This covers the most crucial steps we did in the project. 
-![Architecture](architecture.png)
+![Architecture](Architecture.png)
 
 ## Key Steps
 1. We have the dataset on which we will be training the ML model which is the bankmarketing dataset.
