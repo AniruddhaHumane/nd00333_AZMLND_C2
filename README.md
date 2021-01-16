@@ -77,7 +77,7 @@ The Architectural diagram is as follows. This covers the most crucial steps we d
 14. Through pipeline we created an autoML experiment and ran it to identify the best model. This is the output of runwidget
 ![pipeline runwidget](14%20pipeline%20runwidget.png)
 15. These are the steps our model performed
-![best model steps](best%20model%20steps.png)
+![best model steps](15%20best%20model%20steps.png)
 16. We then deployed and created an endpoint to schedule the run through pipeline
 ![pipeline endpoints](11%20pipeline%20endpoints.png)
 17. and then scheduled a new AutoML run
