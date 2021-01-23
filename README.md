@@ -1,3 +1,4 @@
+
 # Operationalizing Machine Learning
 
 ## Overview
@@ -50,37 +51,37 @@ The Architectural diagram is as follows. This covers the most crucial steps we d
 ![Architecture](Architecture.png)
 
 ## Key Steps
-1. We have the dataset on which we will be training the ML model which is the bankmarketing dataset.
+1. We have the dataset on which we will be training the ML model which is the bankmarketing dataset. We will be using this dataset to identify the best model to predict the output Y.
 ![Dataset](1%20dataset.png)
-2. We then created an AutoML experiment and used our bankmarketing dataset to identify the best model.
+2. To identify the best model for our data. We created an AutoML experiment. Specified the parameters so that our experiment finishes within time and started its execution.
 ![AutoML Experiment](2%20automl%20finished.png)
-3. We identified that the best model was a VotingEnsemble which had the accuracy of 92%.
+3. After the execution of the AutoML experiement, we identified that the best model was a VotingEnsemble which had the accuracy of 92%.
 ![Best Model](3%20best%20model.png)
-4. We then deployed our best model and created an endpoint
+4. We will be using our best model for deployment. Using this deployment we created an endpoint.
 ![Endpoint](4%20endpoint%20deployed.png)
-5. To enable the application insight we executed the logs.py
+5. Now we want to make sure that we get all the logs from our deployment. Using our logs.py file, we first enabled application insights so that in Azure in real time we get all the information about the requests and other factors. Then we fetch all the logs from our deployment. In the logs you can see the line where we enable the application insights.
 ![Logs](5%20logs.py.png)
-6. We can see that the application insights are enabled
+6. This is where we verified that the application insight was running.
 ![App Insights](6%20app%20insight%20enabled.png)
-7. We then downloaded the latest docker image using swagger.sh
+7. Now we want to make sure that we document our model properly. For that we download the latest version of swagger UI image from docker repository. We do this by executing the docker commands in swagger.sh.
 ![swagger sh](swagger%20sh.png)
-9. And provided the swagger URI throgh serve.py to get the model documentation. These are the HTTP APIs that are available.
+9. Now we want to make sure our swagger.json that downloaded from the endpoint details, available on the localhost. Because we will be using this location of swagger.json on swagger UI to get the list of all the services, input and output. For this we open the swagger UI image and put this URL. We can see that our model has a score URL on which we can provide inputs.
 ![http api score](7%20http%20api%20score.png)
 10. And this is the response that our model provides. On successful execution it returns the score otherwise it returns an error code with description.
 ![http api response](8%20http%20api%20response.png)
-11. We then copied the rest URI and primary key, updated it in the endpoint.py and executed it to get the output from the model.
+11. We then copied the rest URI and primary key from the endpoint/consume tab, and updated it in the endpoint.py. The endpoint.py file contains the necessary code to execute our deployed model through the endpoint. We used the data.json as input, and executed the model to get the response.
 ![endpoint response](9%20endpoint%20response.png)
-12. Then we created the bankmarketing dataset through the notebook
+12. Now we want to automate everything using a pipeline. for that we downloaded and created the bankmarketing dataset through the code provided in the notebook.
 ![bankmarketing datased from notebook](12%20bankmarketing%20datased%20from%20notebook.png)
-13. Then we created the pipeline
+13. We then created a pipeline so that we can update the model remotely.
 ![pipeline created](10%20pipeline%20created.png)
-14. Through pipeline we created an autoML experiment and ran it to identify the best model. This is the output of runwidget
+14. We also need to provide all the necessary steps. The steps involve creating an AutoML experiement and then running it. We executed our pipeline and this is how the runWidget output looks like.
 ![pipeline runwidget](14%20pipeline%20runwidget.png)
-15. These are the steps our model performed
+15. Now we also want to see what all the steps we performed. after extracting the best model we used its `steps` attribute to see all the hyperparemeters learned and what various activation functions and steps our best model performed. 
 ![best model steps](15%20best%20model%20steps.png)
-16. We then deployed and created an endpoint to schedule the run through pipeline
+16. And like we did before we will deploy our best model and create an endpoint to consume and rerun through the pipeline.
 ![pipeline endpoints](11%20pipeline%20endpoints.png)
-17. and then scheduled a new AutoML run
+17. Now the reason why we created the pipeline, we create an AutoML run through the endpoint using the pipeline.
 ![scheduled run completed](16%20scheduled%20run%20completed.png)
 
 
